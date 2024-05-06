@@ -4,10 +4,12 @@
 [![license](https://badgen.net/github/license/Bored-Entertainment/boredOS/)](LICENSE)
 ![size](https://img.shields.io/github/repo-size/Bored-Entertainment/boredOS?color=green)
 
-## Demos
-- [files.boredht.ml](https://files.boredht.ml/)
+## Demo
+
+- [bored-os.pisaucer.com](bored-os.pisaucer.com)
 
 ## Built with
+
 - Apps from [98.js](https://github.com/1j01/98)
   - [jspaint](https://github.com/1j01/jspaint)
   - [3d pipes](https://github.com/1j01/pipes)
@@ -29,7 +31,7 @@
 
 ## Contributing
 
-Pull requests are welcome. If you find any problem(s) in boredhtml, feel free to submit an issue. This includes stuff like vulnerabilities, or even the most trivial issues (such as typoes.) If you know how to fix an issue, feel free to make a pull request for the issue. 
+Pull requests are welcome. If you find any problem(s) in boredOS, feel free to submit an issue. This includes stuff like vulnerabilities, or even the most trivial issues (such as typoes.) If you know how to fix an issue, feel free to make a pull request for the issue. 
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our [code of conduct](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us. If you would like to suggest a feature or change, submit it as an issue as well or message us on [discord](https://discord.com/invite/7qTNdXd); it will be given the appropriate tag once we have seen it. We love to discuss any major changes with you.
 
