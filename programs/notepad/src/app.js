@@ -1,4 +1,3 @@
-
 var $textarea = $("#document-textarea");
 var $print_helper = $("#print-helper");
 
@@ -36,7 +35,7 @@ var default_file_name_for_title = "Untitled";
 var default_file_name_for_saving = "Untitled.txt";
 
 function update_title() {
-	document.title = (file_name || default_file_name_for_title) + " - Notepad";
+	document.title = (file_name || default_file_name_for_title) + " - Notepad.exe";
 
 	if (frameElement && frameElement.$window) {
 		frameElement.$window.title(document.title);
@@ -178,6 +177,16 @@ function select_all() {
 	$textarea.focus().select();
 }
 
+// function copy(str) {
+// 	$textarea.focus();
+// 	document.execCommand("insertText", false, str);
+// }
+
+function insert_paste(str) {
+	$textarea.focus();
+	document.execCommand("insertText", false, str);
+}
+
 function insert_time_and_date() {
 	var str = moment().format("LT l");
 	$textarea.focus();
@@ -211,20 +220,23 @@ $textarea.on("input", function (e) {
 });
 
 if (file_path) {
-	withFilesystem(function () {
-		var fs = BrowserFS.BFSRequire('fs');
-		fs.readFile(file_path, "utf8", function (error, content) {
-			if (error) {
-				alert("Failed to load file: " + error);
-				throw error;
-			}
-			// NOTE: could be destroying changes, since this is (theoretically/potentially) async
-			// altho the user can probably undo
-			// TODO: lock the textarea as readonly until here
-			$textarea.val(content);
-			update_print_helper();
-		});
-	});
+    fetch(file_path)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to load file: ' + response.statusText);
+            }
+            return response.text();
+        })
+        .then(content => {
+            // NOTE: could be destroying changes, since this is (theoretically/potentially) async
+            // altho the user can probably undo
+            // TODO: lock the textarea as readonly until here
+            $textarea.val(content);
+            update_print_helper();
+        })
+        .catch(error => {
+            console.error(error);
+        });
 } else if (local_storage_document_id) {
 	try {
 		$textarea.val(localStorage["notepad:" + local_storage_document_id] || "");

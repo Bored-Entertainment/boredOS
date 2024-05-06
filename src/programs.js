@@ -1247,7 +1247,7 @@ add_icon_not_via_filesystem({
 add_icon_not_via_filesystem({
     title: "Internet Explorer",
     iconID: "internet-explorer",
-    open: function() { Explorer("https://www.boredht.ml/"); },
+    open: function() { Explorer("https://bored.pisaucer.com/"); },
     shortcut: true
 });
 add_icon_not_via_filesystem({
@@ -1308,9 +1308,24 @@ add_icon_not_via_filesystem({
     iconID: "bored",
     open: function() {
         Task(make_iframe_window({
-            src: "https://boredht.ml/",
+            src: "https://bored.pisaucer.com/",
             icons: iconsAtTwoSizes("bored"),
             title: "Bored in School Right Now",
+            outerWidth: 835,
+            outerHeight: 500,
+            resizable: true,
+        }));
+    },
+    shortcut: true,
+});
+add_icon_not_via_filesystem({
+    title: "the mesa complex 2.0",
+    iconID: "mesa",
+    open: function() {
+        Task(make_iframe_window({
+            src: "https://bored-entertainment.github.io/mesa.rip/",
+            icons: iconsAtTwoSizes("mesa"),
+            title: "the mesa complex 2.0",
             outerWidth: 835,
             outerHeight: 500,
             resizable: true,
@@ -1368,7 +1383,7 @@ add_icon_not_via_filesystem({
     iconID: "windows-96",
     open: function() {
         Task(make_iframe_window({
-            src: "https://win96.boredht.ml/",
+            src: "https://windows96.net/",
             icons: iconsAtTwoSizes("windows-96"),
             title: "Windows 96",
             outerWidth: 835,
@@ -1383,7 +1398,7 @@ add_icon_not_via_filesystem({
     iconID: "windows-update",
     open: function() {
         Task(make_iframe_window({
-            src: "https://win98.boredht.ml",
+            src: "https://98.js.org/",
             icons: iconsAtTwoSizes("windows-update"),
             title: "Windows 98",
             outerWidth: 835,
@@ -1449,7 +1464,7 @@ add_icon_not_via_filesystem({
     iconID: "minecraft",
     open: function() {
         Task(make_iframe_window({
-            src: "https://craft.boredht.ml",
+            src: "https://bored-craft.pisaucer.com/",
             icons: iconsAtTwoSizes("minecraft"),
             title: "Classic Minecraft",
             outerWidth: 835,
